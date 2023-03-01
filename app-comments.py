@@ -1,3 +1,4 @@
+import requests
 
 import pandas as pd
 import openpyxl
@@ -9,4 +10,12 @@ import datetime
 
 load_dotenv() # look in the ".env" file for env vars
 
-API_KEY = os.getenv("NY_API_KEY")
+YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+
+#example video for requests:
+    #URL: https://www.youtube.com/watch?v=iNZk-N6uDcg
+    #Video ID: iNZk-N6uDcg
+    #Request URL: https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=100&order=relevance&videoId=iNZk-N6uDcg&key=[YOUR_API_KEY]
+    #Request URL Next Page (Example): https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&maxResults=100&order=relevance&pageToken=Z2V0X3JhbmtlZF9zdHJlYW1zLS1DdjhEQ0lBRUZSZTMwVGdhOUFNSzd3TUkyRjhRZ0FRWUJ5TGtBMnZhSUVoUVlKNTNwRmRJTXVtSW9aWjc2SWxCMUFRTHdaYVFheG81YXBtQ2lNaWpqb3ZFVUtvU1IxYnFjdUJJM0NMYXhDNG9NREhHQ3VVU0Y1eHV0QmVyMHFBV3hWNVlsX2ZhMUMwdUtVdnNFOVVTVnpma2hrWFVjalJZUktRVmhqZk94RS1Fc05yWDNtTHBCY2NfSGFYbzBpaWtVSUNZRXhDZFBXRUhOVlpONTBSeFlJcy1kdllWbS1TZlpLNmRtdGJ0VEZUYnlJeWQ2Tm9URy14bTA0d2J4UWJlek5xRzBIaXEzUlpIUExrWEFmNFdHVlF1a09wSU5DYkVCczdWV1ltcURKazVxVTVuUTRHNnFsbU9LRzFGbkFiSms1MWgzQ3VCaW9BVFpWZFBZb2RaNTAzeFhldDhTWlFReElxMVN3bUx4NGtTOEREZWlxUTJ4RGE2OG91Q2sza1N2RGdkOGhacUtGV0xzblRxakN4U3l6TEdTTTB3bkZDcmxrUlJGQWtxVURqRkQyTHBwd0YzSWd0UVVtVTFNaWg1YW9nS3hGVjR6MDBQTGF3SzZKQUlHMjF4YzB3Y0VqdTNhT0FPRWVncTZnWTkweU5WalZoc2kyQkdBa2gzS1JQRVlMSVMzclRzQ25jWnc5ODAyUURySUVOX01zeEVaNmowem40anY0b3U0NERsdm1IbWhPQm10Q0hqTzNGZU5lcVlkaG9UdDhSck1xSlhiUE1ta1psVkpqSklOLVNhY01SMFlCZ2xvX3hITUNPbThIVzlaV01FMDg1SmtiUTZZT0hNWXU1UVR4SVBqVndIRDdpMkNJbEZKUUstSnRRV204b1JFMHhhWVEwNVRnQVFaQklGQ0lrZ0dBQVNCd2lISUJBQkdBQVNCUWlHSUJnQUVnVUlpQ0FZQUJJSENKY2dFR0lZQVJJSENJVWdFR1FZQVJnQg&videoId=iNZk-N6uDcg&key=[YOUR_API_KEY]
+
+
